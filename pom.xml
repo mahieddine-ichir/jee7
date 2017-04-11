@@ -40,4 +40,9 @@
     	<scope>provided</scope>
     </dependency>
   </dependencies>
+  <modules>
+  	<module>async</module>
+  	<module>upload</module>
+  	<module>transactions</module>
+  </modules>
 </project>
