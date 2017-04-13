@@ -44,5 +44,6 @@
   	<module>async</module>
   	<module>upload</module>
   	<module>transactions</module>
+  	<module>jpa</module>
   </modules>
 </project>
