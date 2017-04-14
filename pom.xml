@@ -45,5 +45,6 @@
   	<module>upload</module>
   	<module>transactions</module>
   	<module>jpa</module>
+  	<module>jaxrs</module>
   </modules>
 </project>
