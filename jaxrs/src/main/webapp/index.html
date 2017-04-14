@@ -1,0 +1,53 @@
+<html ng-app="App">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<title>Insert title here</title>
+</head>
+<body ng-controller="EtudiantController">
+
+<div class="container">
+	<h3>Etudiants</h3>
+	<table class="table">
+	<thead>
+	  <tr>
+	     <th>Nom</th>
+	     <th>Age</th>
+	     <th>Classe</th>
+	  </tr>
+	 </thead>
+	 <tbody>
+	  <tr ng-repeat="e in etudiants">
+    	 <td>{{e.nom}}</td>
+     	 <td>{{e.age}}</td>
+     	 <td>{{e.classe}}</td>
+  		</tr>
+	 </tbody>
+	</table>
+</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	<script>	
+	
+		var app = angular.module("App", []);
+		app.controller('EtudiantController', function($scope, $http) {
+			$http({
+				  method: 'GET',
+				  url: '/rest/api/etudiants'
+				}).then(function successCallback(response) {
+					
+					$scope.etudiants = response.data;
+					
+				  }, function errorCallback(response) {
+					  
+				  });
+			
+		});
+	
+	</script>
+</body>
+</html>

@@ -3,6 +3,7 @@ package com.michir.jaxrs;
 import java.util.Collection;
 
 import javax.inject.Inject;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -20,5 +21,9 @@ public class MyAwesomeApi {
 		return backend.all();
 	}
 	
+	@DELETE
+	public void delete(Integer id) {
+		backend.delete(id);
+	}
 	
 }

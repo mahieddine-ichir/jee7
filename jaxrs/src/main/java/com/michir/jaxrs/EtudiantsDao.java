@@ -1,26 +1,28 @@
 package com.michir.jaxrs;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.validation.constraints.NotNull;
 
-@ApplicationScoped
+
+@Stateless
 public class EtudiantsDao {
 
-	private static Collection<Etudiant> etudiants;
-	static {
-		etudiants = new ArrayList<>();
-		
-		etudiants.add(Etudiant.valueOf("Etudiant 1", 22, "Classe 1"));
-		etudiants.add(Etudiant.valueOf("Etudiant 2", 21, "Classe 2"));
-		etudiants.add(Etudiant.valueOf("Etudiant 3", 21, "Classe 3"));
-		etudiants.add(Etudiant.valueOf("Etudiant 4", 19, "Classe 1"));
-		etudiants.add(Etudiant.valueOf("Etudiant 5", 22, "Classe 1"));
-	}
+	@Inject
+	private EtudiantsRepository repo;
 	
 	public Collection<Etudiant> all() {
-		return etudiants;
+		return repo.all();
+	}
+	
+	public Etudiant add(@NotNull String nom, Integer age, String classe) {
+		return repo.add(Etudiant.valueOf(nom, age, classe));
+	}
+	
+	public void delete(Integer id) {
+		repo.delete(id);
 	}
 	
 }

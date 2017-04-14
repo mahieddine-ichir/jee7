@@ -8,6 +8,8 @@ public class Etudiant {
 	
 	private String classe;
 
+	private Integer id;
+
 	/**
 	 * @return the nom
 	 */
@@ -57,5 +59,11 @@ public class Etudiant {
 		etudiant.setClasse(classe);
 		return etudiant;
 	}
-	
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getId() {
+		return this.id;
+	};
 }
