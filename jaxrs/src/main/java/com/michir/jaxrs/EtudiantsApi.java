@@ -13,10 +13,10 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/etudiants")
 @Produces(MediaType.APPLICATION_JSON)
-public class MyAwesomeApi {
+public class EtudiantsApi {
 
 	@Inject
-	private EtudiantsDao backend;
+	private EtudiantsService backend;
 	
 	@GET
 	public Collection<Etudiant> etudiants() {

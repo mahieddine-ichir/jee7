@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 
 @Stateless
-public class EtudiantsDao {
+public class EtudiantsService {
 
 	@PersistenceContext(unitName="pu")
 	private EntityManager em;
